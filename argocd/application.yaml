@@ -1,0 +1,22 @@
+# Se aplica UNA vez a mano en el cluster: kubectl apply -f application.yaml
+# A partir de ahi, ArgoCD vigila manifests/ y despliega solo.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Mouzotech/argocd-demo.git
+    targetRevision: main
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
