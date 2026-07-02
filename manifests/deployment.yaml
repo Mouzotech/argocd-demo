@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: demo
-          image: ghcr.io/mouzotech/argocd-demo:initial
+          image: ghcr.io/mouzotech/argocd-demo:bff5095
           ports:
             - containerPort: 8080
           readinessProbe:
