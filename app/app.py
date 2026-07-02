@@ -2,8 +2,8 @@
 import http.server
 import socket
 
-VERSION = "1.0.0"
-COLOR = "#0f766e"
+VERSION = "1.1.0"
+COLOR = "#7c3aed"
 MESSAGE = "Hola equipo! Desplegado por ArgoCD"
 
 PAGE = """<!doctype html>
